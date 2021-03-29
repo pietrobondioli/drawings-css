@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: #B7DDF7;
+    width: 100vw;
+    height: 100vh;
+}
+
+.drawing {
+    width: 384px;
+    height: 448px;
+}
+
+.corncob {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.corn_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 128px;
+    height: 80%;
+    background-color: #F1B501;
+    border-radius: 47% 47% 35% 35%;
+    overflow: hidden;
+}
+
+.corn_body_grain {
+    --side: 22px;
+    --gap: 14px;
+    --side_and_gap: calc(var(--side) + var(--gap));
+    width: var(--side);
+    height: var(--side);
+    color: #F9D70B;
+    background-color: #F9D70B;
+    border-radius: 2px;
+    box-shadow:
+    0 0 0 0 currentColor,
+    0 var(--side_and_gap) 0 0 currentColor,
+    0 calc(2 * var(--side_and_gap)) 0 0 currentColor,
+    0 calc(3 * var(--side_and_gap)) 0 0 currentColor,
+    0 calc(4 * var(--side_and_gap)) 0 0 currentColor,
+    0 calc(5 * var(--side_and_gap)) 0 0 currentColor,
+    0 calc(6 * var(--side_and_gap)) 0 0 currentColor,
+    var(--side_and_gap) 0 0 0 currentColor,
+    var(--side_and_gap) var(--side_and_gap) 0 0 currentColor,
+    var(--side_and_gap) calc(2 * var(--side_and_gap)) 0 0 currentColor,
+    var(--side_and_gap) calc(3 * var(--side_and_gap)) 0 0 currentColor,
+    var(--side_and_gap) calc(4 * var(--side_and_gap)) 0 0 currentColor,
+    var(--side_and_gap) calc(5 * var(--side_and_gap)) 0 0 currentColor,
+    var(--side_and_gap) calc(6 * var(--side_and_gap)) 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) 0 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) var(--side_and_gap) 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) calc(2 * var(--side_and_gap)) 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) calc(3 * var(--side_and_gap)) 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) calc(4 * var(--side_and_gap)) 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) calc(5 * var(--side_and_gap)) 0 0 currentColor,
+    calc(2 * var(--side_and_gap)) calc(6 * var(--side_and_gap)) 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) 0 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) var(--side_and_gap) 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) calc(2 * var(--side_and_gap)) 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) calc(3 * var(--side_and_gap)) 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) calc(4 * var(--side_and_gap)) 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) calc(5 * var(--side_and_gap)) 0 0 currentColor,
+    calc(3 * var(--side_and_gap)) calc(6 * var(--side_and_gap)) 0 0 currentColor
+    ;
+}
+
+.corn_leaf {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+}
+
+.corn_leaf_left_top {
+    left: 15%;
+    height: 60%;
+    background-color: #88C057;
+    clip-path: polygon(0 0, 70% 0%, 92% 28%, 100% 70%, 100% 100%, 66% 93%, 47% 60%, 38% 24%);
+    border-radius: 10% 45% 20% 0;
+    z-index: 2;
+}
+
+.corn_leaf_right_top {
+    right: 15%;
+    height: 55%;
+    background-color: #659C35;
+    clip-path: polygon(0 0, 82% 0, 97% 27%, 100% 70%, 100% 100%, 66% 93%, 47% 60%, 39% 32%);
+    transform: scaleX(-1);
+    border-radius: 15% 40% 30% 30%;
+}
+
+.corn_leaf_light {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    clip-path: polygon(83% 7%, 86% 19%, 62% 26%, 41% 44%, 37% 71%, 24% 70%, 31% 36%, 55% 16%);
+}
+
+.corn_leaf_left_top .corn_leaf_light:nth-child(n) {
+    background-color: #A4E869;
+}
+
+.corn_leaf_left_top .corn_leaf_light:nth-child(1) {
+    transform: scaleX(-1);
+    top: 5%;
+    right: 25%;
+}
+
+.corn_leaf_left_top .corn_leaf_light:nth-child(2) {
+    transform: rotate(-10deg) scaleY(-1);
+    width: 30%;
+    height: 40%;
+    bottom: 15%;
+    right: 15%;
+}
+
+.corn_leaf_right_top .corn_leaf_light:nth-child(n) {
+    background-color: #88C057;
+}
+
+.corn_leaf_right_top .corn_leaf_light:nth-child(1) {
+    transform: scaleX(-1);
+    top: 12%;
+    left: 38%;
+}
